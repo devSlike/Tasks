@@ -1,0 +1,50 @@
+﻿@model Tasks.Models.Task
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Task</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Date)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Date)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TaskName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TaskName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Completed)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Completed)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Category.CategoryName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Category.CategoryName)
+    </div>
+</fieldset>
+
+@Html.Action("_GetSubTasks", "SubTask", new { id = Model.TaskId })
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.TaskId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}

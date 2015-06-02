@@ -1,0 +1,29 @@
+﻿@model Tasks.Models.SubTask
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>SubTask</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Completed)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Completed)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Text)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Text)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.SubTaskId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
